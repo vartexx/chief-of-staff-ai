@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chief of Staff AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=win2" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="status-banner hidden" id="statusBanner"></div>
+
+      <section class="hero-shell">
+        <div class="hero-copy">
+          <div class="hero-orb hero-orb-left"></div>
+          <div class="hero-orb hero-orb-right"></div>
+          <h1>Chief of Staff AI turns one deadline into a coordinated multi-agent workflow.</h1>
+          <p class="hero-text" id="productNarrative"></p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#commandCenter">Run the live workflow</a>
+            <a class="secondary-link" href="#proof">See architecture proof</a>
+          </div>
+        </div>
+
+        <aside class="mission-card">
+          <p class="panel-label">Problem fit</p>
+          <h2>Built exactly for the brief</h2>
+          <p class="muted-text">
+            Multi-agent orchestration for tasks, schedules, and information, powered by an API-first architecture with
+            persistent state and MCP-style tool integrations.
+          </p>
+          <div class="requirement-list" id="requirementsList"></div>
+        </aside>
+      </section>
+
+      <section class="brief-ribbon">
+        <div>
+          <p class="mini-label">Problem Statement</p>
+          <strong>Build a multi-agent AI system that helps users manage tasks, schedules, and information.</strong>
+        </div>
+        <div>
+          <p class="mini-label">Winning Angle</p>
+          <strong>Present it as an AI Chief of Staff for high-stakes execution, not a generic assistant.</strong>
+        </div>
+      </section>
+
+      <section class="proof-grid" id="proof">
+        <article class="proof-card">
+          <p class="panel-label">Core Proof</p>
+          <h3>Why this submission scores well</h3>
+          <div class="judge-list" id="judgeChecklist"></div>
+        </article>
+
+        <article class="proof-card">
+          <p class="panel-label">Architecture</p>
+          <h3>What the judges can verify live</h3>
+          <div class="architecture-stack" id="architectureList"></div>
+        </article>
+
+        <article class="proof-card">
+          <p class="panel-label">API Surface</p>
+          <h3>Deployment-ready endpoints</h3>
+          <div class="api-list" id="apiSurface"></div>
+        </article>
+      </section>
+
+      <section class="command-layout" id="commandCenter">
+        <article class="command-card">
+          <div class="card-glow card-glow-orange"></div>
+          <div class="panel-head">
+            <div>
+              <p class="panel-label">Live Demo</p>
+              <h3>Run a high-stakes workflow</h3>
+            </div>
+            <div class="command-actions">
+              <button class="ghost-button" id="refreshButton" type="button">Refresh state</button>
+              <button class="ghost-button warning-button" id="resetWorkspaceButton" type="button">Reset Demo Data</button>
+            </div>
+          </div>
+
+          <form id="commandForm">
+            <label class="sr-only" for="requestInput">Workflow prompt</label>
+            <textarea
+              id="requestInput"
+              name="request"
+              rows="6"
+              placeholder="We present tomorrow at 11 AM. Create missing prep tasks, block 2 hours for rehearsal, summarize the judging notes, and prepare a final checklist."
+            ></textarea>
+            <div class="form-row">
+              <button class="primary-button" type="submit">Launch Workflow</button>
+              <p class="muted-text">The orchestrator plans, delegates, executes through MCP tools, and stores the run.</p>
+            </div>
+          </form>
+
+          <div class="sample-grid" id="samplePrompts"></div>
+        </article>
+
+        <article class="snapshot-card">
+          <div class="card-glow card-glow-green"></div>
+          <p class="panel-label">Live State</p>
+          <h3>System snapshot</h3>
+          <div class="integration-card">
+            <div>
+              <strong>Google Calendar</strong>
+              <p class="muted-text" id="googleCalendarStatus">Checking connection status...</p>
+            </div>
+            <div class="integration-actions">
+              <a class="secondary-link" id="googleConnectButton" href="/api/auth/google/start">Connect Calendar</a>
+              <button class="primary-button" id="googleDemoButton" type="button">Create Real Demo Event</button>
+              <button class="ghost-button" id="googleDisconnectButton" type="button">Disconnect</button>
+            </div>
+          </div>
+          <div class="metric-grid" id="metricsGrid"></div>
+          <div class="tool-chip-row" id="toolCatalog"></div>
+        </article>
+      </section>
+
+      <section class="outcome-layout">
+        <article class="outcome-card">
+          <div class="card-glow card-glow-orange"></div>
+          <div class="panel-head">
+            <div>
+              <p class="panel-label">Executive Brief</p>
+              <h3>What the chief of staff returns</h3>
+            </div>
+          </div>
+          <div class="executive-brief" id="executiveBrief">
+            Run the workflow to generate a live chief-of-staff brief.
+          </div>
+          <div class="next-moves" id="nextMoves"></div>
+          <div class="approval-list" id="approvalsList"></div>
+          <div class="scorecard-grid" id="scorecardGrid"></div>
+        </article>
+
+        <article class="outcome-card">
+          <div class="card-glow card-glow-green"></div>
+          <div class="panel-head">
+            <div>
+              <p class="panel-label">Delegation Flow</p>
+              <h3>Planner to sub-agent execution</h3>
+            </div>
+          </div>
+          <div class="plan-list" id="planList"></div>
+          <div class="timeline-list" id="transcriptList"></div>
+        </article>
+      </section>
+
+      <section class="data-layout">
+        <article class="data-card">
+          <div class="card-glow card-glow-orange"></div>
+          <div class="panel-head">
+            <div>
+              <p class="panel-label">MCP Audit Trail</p>
+              <h3>Recent tool executions</h3>
+            </div>
+          </div>
+          <div class="tool-call-list" id="toolCallList"></div>
+        </article>
+
+        <article class="data-card">
+          <div class="card-glow card-glow-green"></div>
+          <div class="panel-head">
+            <div>
+              <p class="panel-label">Persistent State</p>
+              <h3>Database-backed workspace</h3>
+            </div>
+          </div>
+          <div class="data-columns">
+            <div>
+              <h4>Tasks</h4>
+              <div class="stack-list" id="taskList"></div>
+            </div>
+            <div>
+              <h4>Calendar</h4>
+              <div class="stack-list" id="eventList"></div>
+            </div>
+            <div>
+              <h4>Notes</h4>
+              <div class="stack-list" id="noteList"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js?v=win2"></script>
+  </body>
+</html>
