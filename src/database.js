@@ -12,6 +12,7 @@ class DatabaseService {
 
   async initialize() {
     const SQL = await initSqlJs();
+    fs.mkdirSync(path.dirname(DATABASE_FILE), { recursive: true });
     const databaseBuffer = fs.existsSync(DATABASE_FILE) ? fs.readFileSync(DATABASE_FILE) : null;
 
     this.db = databaseBuffer ? new SQL.Database(databaseBuffer) : new SQL.Database();
